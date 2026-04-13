@@ -1,0 +1,26 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+
+
+#Local configs
+uploads/
+*-local.yml
+*-local.yaml
+*-local.json
+*-local.env
+*-local.*
+*-local*
+
+
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#env files
+.env
