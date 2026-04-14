@@ -1,64 +1,40 @@
-# rebase-helper README
+## Description
 
-This is the README for your extension "rebase-helper". After writing up a brief description, we recommend including the following sections.
+Hello, I am Abdoul Aziz Ould EBE. I created this VS Code extension to help with Git rebase and branch management.
+
+   Objective: To provide a user-friendly interface for managing Git branches and rebasing them.
 
 ## Features
 
-Hello, I am Abdoul Aziz Ould EBE. I created this VS Code extension to help with Git rebase and branch management.
+   - Display a list of all branches in the repository.
+   - Allow users to select a branch to rebase on.
+   - Provide a button to rebase the selected branch.
+   - Provide a button to delete the selected branch.
+   - Provide a button to create a new branch from the selected branch.
+   - Provide a button to merge the selected branch into the current branch.
+   - Provide a button to pull all remote branches.
+   - Provide a button to pull the selected branch from the remote repository.
+   - ...
+
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+   - install node.js
+   - install npm
 
-## Extension Settings
+## Installation
+   - Open CMD and type "npm install"
+   - type "npm run compile"
+   - go to extensions tab in VS Code
+   - click on the three dots and select "Install from VSIX"
+   - select the "rebase-helper-0.0.1.vsix" file
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Usage
+   - the extension will be available in the activity bar
+   - click on the extension icon to open the branches view
+   - select a branch to rebase on
+   - click on the rebase button to rebase the selected branch
+   - click on the delete button to delete the selected branch
+   - click on the create button to create a new branch from the selected branch
+   - click on the merge button to merge the selected branch into the current branch
+   - ...
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

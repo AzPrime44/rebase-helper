@@ -1,26 +1,39 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { BranchesViewProvider } from './webview/BranchesViewProvider';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "rebase-helper" is now active!');
+    // Créer le provider
+    const provider = new BranchesViewProvider(context.extensionUri);
+    
+    // Enregistrer le provider
+    const providerRegistration = vscode.window.registerWebviewViewProvider(
+        'rebaseHelper.branchesView',
+        provider,
+        {
+            webviewOptions: {
+                retainContextWhenHidden: true
+            }
+        }
+    );
+    
+    context.subscriptions.push(providerRegistration);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('rebase-helper.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from rebase helper!');
-	});
+    // Commande de test
+    const testCommand = vscode.commands.registerCommand('rebaseHelper.test', () => {
+        vscode.window.showInformationMessage('Rebase Helper is working!');
+        // Focus sur la vue
+        vscode.commands.executeCommand('rebaseHelper.branchesView.focus');
+    });
+    
+    context.subscriptions.push(testCommand);
 
-	context.subscriptions.push(disposable);
+    // Commande pour afficher les branches
+    const showBranchesCommand = vscode.commands.registerCommand('rebaseHelper.showBranches', () => {
+        vscode.commands.executeCommand('rebaseHelper.branchesView.focus');
+    });
+    
+    context.subscriptions.push(showBranchesCommand);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}

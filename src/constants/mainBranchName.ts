@@ -1,0 +1,1 @@
+export const MAIN_BRANCH_NAME = ["main", "master"];
